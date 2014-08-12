@@ -1,0 +1,7 @@
+= Bogo-logic
+
+== License
+
+This project along with its source code and all materials are distributed
+under the terms of the GNU General Public License v3.0 (GPLv3).  See
+link:COPYING[+COPYING+] for further information.
