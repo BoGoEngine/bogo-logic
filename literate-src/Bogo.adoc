@@ -1,0 +1,31 @@
+= Bogo-logic
+:toc: left
+:toclevels: 4
+:numbered:
+:icons: font
+:source-highlighter: pygments
+:pygments-css: class
+:imagesdirs: assets/images
+
+== Quy ước
+
+Để nhất quán trong việc xử lý tiếng Việt, chúng ta thống nhất ý nghĩa của các
+thuật ngữ sau trong Bogo-logic:
+
+* _Dấu-thanh_ là các dấu thay đổi thanh điệu của nguyên âm.  Tiếng Việt có 6
+  loại dấu-thanh:
+
+** Thanh ngang (không dấu)
+** Thanh huyền (_grave_)
+** Thanh sắc (_acute_)
+** Thanh hỏi (_hook_)
+** Thanh ngã (_tilde_)
+** Thanh nặng (_dot_)
+
+* _Dấu-chữ-cái_ là các dấu để tạo chữ cái mới từ chữ cái sẵn có:
+
+** Dấu mũ (_hat_, như trong chữ cái +â+)
+** Dấu móc (_horn_, như trong chữ cái +ơ+)
+** Dấu trăng (_breve_, như trong chữ cái +ă+)
+** Dấu ngang (_dash_, như trong chữ cái +đ+)
+
