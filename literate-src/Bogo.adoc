@@ -14,8 +14,8 @@
 Để nhất quán trong việc xử lý tiếng Việt, chúng ta thống nhất ý nghĩa của các
 thuật ngữ sau trong Bogo-logic:
 
-* _Dấu-thanh_ là các dấu thay đổi thanh điệu của nguyên âm.  Tiếng Việt có 6
-  loại dấu-thanh:
+* _Dấu thanh_ là các dấu thay đổi thanh điệu của nguyên âm.  Tiếng Việt có 6
+  loại dấu thanh:
 
 ** Thanh ngang (không dấu)
 ** Thanh huyền (+grave+)
@@ -24,39 +24,46 @@ thuật ngữ sau trong Bogo-logic:
 ** Thanh ngã (+tilde+)
 ** Thanh nặng (+dot+)
 
-* _Dấu-chữ-cái_ là các dấu để tạo chữ cái mới từ chữ cái sẵn có:
+* _Dấu chữ cái_ là các dấu để tạo chữ cái mới từ chữ cái sẵn có:
 
 ** Dấu mũ (+hat+, như trong chữ cái +â+)
 ** Dấu móc (+horn+, như trong chữ cái +ơ+)
 ** Dấu trăng (+breve+, như trong chữ cái +ă+)
 ** Dấu ngang (+dash+, như trong chữ cái +đ+)
 
-* _Nguyên-âm_ (+vowel+) là một âm thanh trong ngôn ngữ nói, được phát âm với
+* _Nguyên âm_ (+vowel+) là một âm thanh trong ngôn ngữ nói, được phát âm với
   thanh quản mở.  Ví dụ: _a_, _e_, _u_, _ư_, _uyê_, ...
 +
-_Phụ-âm_ (+consonant+) là một âm thanh trong ngôn ngữ nói, được phát âm với
+_Phụ âm_ (+consonant+) là một âm thanh trong ngôn ngữ nói, được phát âm với
 thanh quản đóng. Ví dụ: _b_, _c_, _ph_, _tr_, ...
 
-WARNING: Khi ký âm (chuyển từ âm thanh sang chữ viết), nguyên-âm hay phụ-âm có
-thể được tạo thành từ một hoặc nhiều chữ cái.  Khái niệm nguyên-âm, phụ-âm
+WARNING: Khi ký âm (chuyển từ âm thanh sang chữ viết), nguyên âm hay phụ âm có
+thể được tạo thành từ một hoặc nhiều chữ cái.  Khái niệm nguyên âm, phụ âm
 thường bị hiểu sai là một chữ cái đơn lẻ.
 
-NOTE: Khi nói về nguyên-âm hoặc phụ-âm chỉ được cấu tạo bởi một chữ cái, chúng
-tôi sẽ dùng _chữ cái nguyên-âm_ và _chữ cái phụ-âm_ tương ứng.
+NOTE: Khi nói về nguyên âm hoặc phụ âm chỉ được cấu tạo bởi một chữ cái, chúng
+tôi sẽ dùng _chữ cái nguyên âm_ và _chữ cái phụ âm_ tương ứng.
 
-* _Âm-tiết_ (+syllable+) là đơn vị cấu tạo từ cơ bản.  Ví dụ:
+* _Âm tiết_ (+syllable+) là đơn vị cấu tạo từ cơ bản.  Ví dụ:
 
-** Từ _nhà_ có một âm-tiết: _nhà_.
-** Từ _la-tinh_ có 2 âm-tiết: _la_ và _tinh_.
-** Từ _hợp tác xã_ có 3 âm-tiết: _hợp_, _tác_, và _xã_.
+** Từ _nhà_ có một âm tiết: _nhà_.
+** Từ _la-tinh_ có 2 âm tiết: _la_ và _tinh_.
+** Từ _hợp tác xã_ có 3 âm tiết: _hợp_, _tác_, và _xã_.
 
 == Xử lý tiếng Việt
 
 Như mọi bộ gõ khác, phần quan trọng nhất của Bogo-logic là xử lý tiếng Việt.
 Công việc này được chia thành 2 thao tác lớn:
 
-* Thêm dấu-chữ-cái
-* Thêm dấu-thanh
+* Thêm _dấu chữ cái_
+* Thêm _dấu thanh_
 
-Chúng ta sẽ bắt đầu với thao tác thêm dấu-thanh.
+Công việc đầu tiên cần làm là định nghĩa cấu trúc dữ liệu tốt, thuận tiện cho
+việc xử lý tiếng Việt.
 
+=== Cấu trúc dữ liệu cho _âm tiết_
+
+.file::/tmp/tmp.lua
+[source,lua,linenums]
+----
+----
