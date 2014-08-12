@@ -29,3 +29,22 @@ thuật ngữ sau trong Bogo-logic:
 ** Dấu trăng (_breve_, như trong chữ cái +ă+)
 ** Dấu ngang (_dash_, như trong chữ cái +đ+)
 
+* _Nguyên-âm_ là một âm thanh trong ngôn ngữ nói, được phát âm với thanh quản
+  mở.  Ví dụ: _a_, _e_, _u_, _ư_, _uyê_, ...
++
+_Phụ-âm_ là một âm thanh trong ngôn ngữ nói, được phát âm với thanh quản
+đóng. Ví dụ: _b_, _c_, _ph_, _tr_, ...
+
+WARNING: Khi ký âm (chuyển từ âm thanh sang chữ viết), nguyên-âm hay phụ-âm có
+thể được tạo thành từ một hoặc nhiều chữ cái.  Khái niệm nguyên-âm, phụ-âm
+thường bị hiểu sai là một chữ cái đơn lẻ.
+
+NOTE: Khi nói về nguyên-âm hoặc phụ-âm chỉ được cấu tạo bởi một chữ cái, chúng
+tôi sẽ dùng _chữ cái nguyên-âm_ và _chữ cái phụ-âm_ tương ứng.
+
+* _Âm-tiết_ là đơn vị cấu tạo từ cơ bản.  Ví dụ:
+
+** Từ _nhà_ có một âm-tiết: _nhà_
+** Từ _la-tinh_ có 2 âm-tiết: _la_ và _tinh_
+** Từ _hợp tác xã_ có 3 âm-tiết: _hợp_, _tác_, và _xã_
+
