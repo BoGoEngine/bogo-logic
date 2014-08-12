@@ -48,3 +48,13 @@ tôi sẽ dùng _chữ cái nguyên-âm_ và _chữ cái phụ-âm_ tương ứn
 ** Từ _la-tinh_ có 2 âm-tiết: _la_ và _tinh_
 ** Từ _hợp tác xã_ có 3 âm-tiết: _hợp_, _tác_, và _xã_
 
+== Xử lý tiếng Việt
+
+Như mọi bộ gõ khác, phần quan trọng nhất của Bogo-logic là xử lý tiếng Việt.
+Công việc này được chia thành 2 thao tác lớn:
+
+* Thêm dấu-chữ-cái
+* Thêm dấu-thanh
+
+Chúng ta sẽ bắt đầu với thao tác thêm dấu-thanh.
+
