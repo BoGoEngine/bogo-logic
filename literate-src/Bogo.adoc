@@ -1,4 +1,6 @@
 = Bogo-logic
+:Author: Bogoengine Team
+:Email: <cmpitg@gmail.com>
 :toc: left
 :toclevels: 4
 :numbered:
