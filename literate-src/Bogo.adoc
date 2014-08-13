@@ -157,7 +157,7 @@ end
 == Tổng thể chương trình
 
 Sau khi đã định nghĩa tất cả các thành phần cần thiết, chúng ta đã có thể ghép
-lại thành một chương trình tổng thể.
+lại thành một thư viện hoàn chỉnh.
 
 .file::bogo.lua
 [source,lua,linenums]
