@@ -153,3 +153,15 @@ if describe == nil then
 end
 ----
 
+== Tổng thể chương trình
+
+Sau khi đã định nghĩa tất cả các thành phần cần thiết, chúng ta đã có thể ghép
+lại thành một chương trình tổng thể.
+
+.file::bogo.lua
+[source,lua,linenums]
+----
+-- include::fake-describe
+
+-- include::add-tone-char
+----
