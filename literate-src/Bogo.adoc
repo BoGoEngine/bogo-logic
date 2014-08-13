@@ -79,6 +79,54 @@ Công việc này được chia thành 2 thao tác lớn:
 * Thêm _dấu chữ cái_
 * Thêm _dấu thanh_
 
+Để thêm dấu thanh, trước hết chúng ta sẽ định nghĩa một bảng tra cứu tuần hoàn
+tất cả các chữ cái nguyên âm trong tiếng Việt với tất cả các tổ hợp dấu thanh có
+thể.
+
+.code::vowel-chars-defs
+[source,lua,linenums]
+----
+local VOWEL_CHARS = {
+    "à", "á", "ả", "ã", "ạ", "a", "ằ", "ắ", "ẳ", "ẵ", "ặ", "ă",
+    "ầ", "ấ", "ẩ", "ẫ", "ậ", "â", "è", "é", "ẻ", "ẽ", "ẹ", "e",
+    "ề", "ế", "ể", "ễ", "ệ", "ê", "ì", "í", "ỉ", "ĩ", "ị", "i",
+    "ò", "ó", "ỏ", "õ", "ọ", "o", "ồ", "ố", "ổ", "ỗ", "ộ", "ô",
+    "ờ", "ớ", "ở", "ỡ", "ợ", "ơ", "ù", "ú", "ủ", "ũ", "ụ", "u",
+    "ừ", "ứ", "ử", "ữ", "ự", "ư", "ỳ", "ý", "ỷ", "ỹ", "ỵ", "y"
+}
+----
+
+Để ý kỹ có thể thấy ngay các chữ cái nguyên âm trong bảng được sắp xếp theo trật
+tự huyền, sắc, hỏi, ngã, nặng, ngang, đúng với trật tự chúng ta đã định nghĩa các
+mã dấu thanh ở trên. Nhờ vậy, chúng ta có thể định nghĩa thuật toán thêm dấu thanh
+đơn giản là tìm vị trí nhóm nguyên âm tương ứng với nguyên âm cần thêm dấu trong
+bảng và sử dụng mã dấu thanh cần thêm làm tọa độ tương đối so với nhóm.
+
+.code::add-tone-char
+[source,lua,linenums]
+----
+-- include::vowel-chars-defs
+
+function add_tone_char (char, tone)
+    for i, v in pairs(VOWEL_CHARS) do
+        if char == v then
+            return VOWEL_CHARS[math.floor((i - 1) / 6) * 6 + tone]
+        end
+    end
+
+    return char
+end
+
+describe("add_tone_char", function ()
+    it("adds a tone to a char", function ()
+        assert.are.equal(add_tone_char ("a", TONE_ACUTE), "á")
+        assert.are.equal(add_tone_char ("ỷ", TONE_HOOK), "ỷ")
+        assert.are.equal(add_tone_char ("ụ", TONE_NONE), "u")
+    end)
+end)
+----
+
+
 Công việc đầu tiên cần làm là định nghĩa cấu trúc dữ liệu tốt, thuận tiện cho
 việc xử lý tiếng Việt.
 
