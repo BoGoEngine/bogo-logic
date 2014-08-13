@@ -139,11 +139,12 @@ việc xử lý tiếng Việt.
 
 == Kiểm thử
 
-Chương trình của chúng ta sử dụng bộ kiểm thử _busted_ cho Lua. Nếu chạy file
-Lua thông qua bộ kiểm thử thì nó sẽ định nghĩa sẵn các hàm +describe+, +it+,...
-còn nếu không thì sẽ không có và không thể thực thi chương trình. Vậy chúng ta
-sẽ định nghĩa một hàm +describe+ giả trong trường hợp chương trình không chạy
-qua bộ kiểm thử.
+Chương trình của chúng ta sử dụng bộ kiểm thử
+link:http://olivinelabs.com/busted/[busted] cho Lua. Nếu chạy file Lua thông
+qua bộ kiểm thử thì nó sẽ định nghĩa sẵn các hàm +describe+, +it+,... còn nếu
+không thì sẽ không có và không thể thực thi chương trình. Vậy chúng ta sẽ định
+nghĩa một hàm +describe+ giả trong trường hợp chương trình không chạy qua bộ
+kiểm thử.
 
 .code::fake-describe
 [source,lua,linenums]
