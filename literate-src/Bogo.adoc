@@ -126,6 +126,85 @@ describe("add_tone_char", function ()
 end)
 ----
 
+Việc thêm dấu chữ cái cũng cơ bản chỉ là thao tác tra cứu bảng. Chúng ta định
+nghĩa một bảng chứa tất cả các chữ cái có thể thêm dấu chữ cái và kết quả
+khi thêm dấu. Tuy nhiên, để đơn giản, chúng ta sẽ chỉ định nghĩa phiên bản
+không dấu thanh của các chữ cái đó. Thay vì định nghĩa hết, chúng ta sẽ
+lưu dấu thanh của chữ cái đầu vào, xóa dấu đó đi, tra bảng để thêm dấu chữ
+cái, sau đó trả lại dấu thanh như ban đầu.
+
+.code::add-mark-char
+[source,lua,linenums]
+----
+
+-- include::get-tone-char
+
+function add_mark_char (char, mark)
+    local tone = get_tone_char(char)
+
+    if tone ~= TONE_NONE then
+        char = add_tone_char(char, TONE_NONE)
+    end
+
+    local mapping = {
+        ["a"] = {[MARK_HAT] = "â", [MARK_BREVE] = "ă", [MARK_NONE] = "a"},
+        ["ă"] = {[MARK_HAT] = "â", [MARK_BREVE] = "ă", [MARK_NONE] = "a"},
+        ["â"] = {[MARK_HAT] = "â", [MARK_BREVE] = "ă", [MARK_NONE] = "a"},
+        ["e"] = {[MARK_HAT] = "ê", [MARK_NONE] = "e"},
+        ["ê"] = {[MARK_HAT] = "ê", [MARK_NONE] = "e"},
+        ["o"] = {[MARK_HAT] = "ô", [MARK_HORN] = "ơ", [MARK_NONE] = "o"},
+        ["ô"] = {[MARK_HAT] = "ô", [MARK_HORN] = "ơ", [MARK_NONE] = "o"},
+        ["ơ"] = {[MARK_HAT] = "ô", [MARK_HORN] = "ơ", [MARK_NONE] = "o"},
+        ["u"] = {[MARK_HORN] = "ư", [MARK_NONE] = "u"},
+        ["ư"] = {[MARK_HORN] = "ư", [MARK_NONE] = "u"},
+        ["d"] = {[MARK_DASH] = "đ", [MARK_NONE] = "d"},
+        ["đ"] = {[MARK_DASH] = "đ", [MARK_NONE] = "d"},
+    }
+
+    if mapping[char] and mapping[char][mark] then
+        char = mapping[char][mark]
+    end
+
+    if tone ~= TONE_NONE then
+        char = add_tone_char(char, tone)
+    end
+
+    return char
+end
+
+describe("add_mark_char", function ()
+    it("adds mark to a char", function ()
+        assert.are.equal(add_mark_char("e", MARK_HAT), "ê")
+        assert.are.equal(add_mark_char("e", MARK_NONE), "e")
+        assert.are.equal(add_mark_char("ụ", MARK_HORN), "ự")
+    end)
+end)
+----
+
+Và hàm hỗ trợ +get_tone_char+.
+
+.code::get-tone-char
+[source,lua,linenums]
+----
+function get_tone_char (char)
+    for i, v in pairs(VOWEL_CHARS) do
+        if char == v then
+            return (i - 1) % 6 + 1
+        end
+    end
+
+    return TONE_NONE
+end
+
+describe("get_tone_char", function ()
+    it("returns the tone", function ()
+        assert.are.equal(TONE_ACUTE, get_tone_char("á"))
+        assert.are.equal(TONE_HOOK, get_tone_char("ỷ"))
+        assert.are.equal(TONE_NONE, get_tone_char("e"))
+    end)
+end)
+----
+
 
 Công việc đầu tiên cần làm là định nghĩa cấu trúc dữ liệu tốt, thuận tiện cho
 việc xử lý tiếng Việt.
