@@ -24,12 +24,33 @@ thuật ngữ sau trong Bogo-logic:
 ** Thanh ngã (+tilde+)
 ** Thanh nặng (+dot+)
 
+.code::tone-defs
+[source,lua,linenums]
+----
+local TONE_GRAVE,
+      TONE_ACUTE,
+      TONE_HOOK,
+      TONE_TILDE,
+      TONE_DOT,
+      TONE_NONE = 1, 2, 3, 4, 5, 6
+----
+
 * _Dấu chữ cái_ là các dấu để tạo chữ cái mới từ chữ cái sẵn có:
 
 ** Dấu mũ (+hat+, như trong chữ cái +â+)
 ** Dấu móc (+horn+, như trong chữ cái +ơ+)
 ** Dấu trăng (+breve+, như trong chữ cái +ă+)
 ** Dấu ngang (+dash+, như trong chữ cái +đ+)
+
+.code::mark-defs
+[source,lua,linenums]
+----
+local MARK_BREVE,
+      MARK_HAT,
+      MARK_HORN,
+      MARK_DASH,
+      MARK_NONE = 1, 2, 3, 4, 5
+----
 
 * _Nguyên âm_ (+vowel+) là một âm thanh trong ngôn ngữ nói, được phát âm với
   thanh quản mở.  Ví dụ: _a_, _e_, _u_, _ư_, _uyê_, ...
