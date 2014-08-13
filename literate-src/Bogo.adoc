@@ -258,5 +258,9 @@ lại thành một thư viện hoàn chỉnh.
 ----
 -- include::fake-describe
 
+-- include::tone-defs
+-- include::mark-defs
+
 -- include::add-tone-char
+-- include::add-mark-char
 ----
