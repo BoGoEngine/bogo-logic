@@ -216,7 +216,22 @@ việc xử lý tiếng Việt.
 ----
 ----
 
-== Kiểm thử
+== Các công cụ hỗ trợ
+
+Kiểm tra chữ cái đầu vào có phải một chữ cái nguyên âm không.
+
+.code::is-vowel-char
+[source,lua,linenums]
+----
+function is_vowel_char (char)
+    if string.find("aeiouy", char) then
+        return true
+    else
+        return false
+    end
+end
+----
+
 
 Chương trình của chúng ta sử dụng bộ kiểm thử
 link:http://olivinelabs.com/busted/[busted] cho Lua. Nếu chạy file Lua thông
