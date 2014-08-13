@@ -8,6 +8,10 @@ gen-html:
 
 gen-all: gen-src gen-html
 
+
+test: gen-src
+	busted src/bogo.lua
+
 clean:
 	rm -rf \
 		docs \
